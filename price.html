@@ -5,12 +5,12 @@
     <title>Прайс-лист | Барбершоп «Бородинский»</title>
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic" rel="stylesheet" type="text/css">
   </head>
-  <body>
-    <header>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <header class="main-header">
       <div class="container clearfix">
-      <!--Меню в шапке сайта-->
+      <!--Menu in the header-->
         <nav class="header-nav">
           <ul>
             <li>
@@ -33,26 +33,35 @@
             </li>
           </ul>
         </nav>
-          <!--Форма для входа-->
+        <!--Login form-->
         <div class="user-block">
           <a href="#" class="user-login">Вход</a>
         </div>
       </div>
     </header>
+    <!-- Main container -->
     <div class="main-container">
       <div class="container clearfix">
-        <!--Заголовок h1 и хлебные крошки-->
         <div class="title-container">
           <h1>Прайс-лист</h1>
-          <div class="breadcrumbs">
-            <a href="#">Главная</a>
-            <span class="breadcrumbs-active">Прайс-лист</span>
-          </div>
+          <!-- Breadcrumbs -->
+          <ul class="breadcrumbs" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <a href="#" itemprop="item">
+                <span itemprop="name">Главная</span>
+              </a>
+            </li>
+            <li class="breadcrumbs-active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <span itemprop="item">
+                <span itemprop="name">Прайс-лист</span>
+              </span>
+            </li>
+          </ul>
         </div>
-        <!-- Прайс-лист_большой текст на странице -->
+        <!-- Price-list_big text on the page -->
         <div class="big-title">Истинно мужская классика</div>
         <div class="producers-list-price-table clearfix">
-          <!-- Прайс-лист_список производителей -->
+          <!-- Price-list_producers list -->
           <div class="producers-list">
             <h3>Мы используем только лучшие средства</h3>
             <ul>
@@ -62,7 +71,7 @@
               <li>Malin+Goetz</li>
             </ul>
           </div>
-          <!-- Прайс-лист_прайс -->
+          <!-- Price-list_price -->
           <div class="price-table">
             <h3>Цены на услуги наших мастеров</h3>
             <table>
@@ -81,7 +90,7 @@
             </table>
           </div>
         </div>
-        <!-- Прайс-лист_о нас -->
+        <!-- Price-list_about us -->
         <div class="about-us clearfix">
           <h3>Несколько слов о нас</h3>
           <p>Наша парикмахерская занимается исключительно мужскими стрижками. Стрижка каждого клиента для нас — это уникальная и продуманная до мелочей работа. Мы не работаем на количество, мы делаем качество.</p>
@@ -90,6 +99,7 @@
       </div>
     </div>
   </body>
+  <!-- Footer -->
   <footer>
     <div class="container clearfix">
       <div class="footer-contacts">

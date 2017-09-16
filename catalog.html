@@ -5,12 +5,12 @@
     <title>Барбершоп «Бородинский»</title>
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic" rel="stylesheet" type="text/css">
   </head>
-  <body>
-    <header>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <header class="main-header">
       <div class="container clearfix">
-      <!--Меню в шапке сайта-->
+      <!--Menu in the header-->
         <nav class="header-nav">
           <ul>
             <li>
@@ -33,7 +33,7 @@
             </li>
           </ul>
         </nav>
-          <!--Форма для входа-->
+          <!--Login form-->
         <div class="user-block">
           <a href="#" class="user-login">Вход</a>
         </div>
@@ -41,37 +41,57 @@
     </header>
     <div class="main-container">
       <div class="container clearfix">
-        <!--Заголовок h1 и хлебные крошки-->
         <div class="title-container">
           <h1>Средства для ухода</h1>
-          <div class="breadcrumbs">
-            <a href="#">Главная</a>
-            <a href="#">Магазин</a>
-            <span class="breadcrumbs-active">Средства для ухода</span>
-          </div>
+          <!-- Breadcrumbs -->
+          <ul class="breadcrumbs" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <a href="#" itemprop="item">
+                <span itemprop="name">Главная</span>
+              </a>
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <a href="#" itemprop="item">
+                <span itemprop="name">Магазин</span>
+              </a>
+            </li>
+            <li class="breadcrumbs-active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <span itemprop="item">
+                <span itemprop="name">Средства для ухода</span>
+              </span>
+            </li>
+          </ul>
         </div>
-        <!--Производители и группы товаров_фильтры-->
+        <!--Producers and products groups_filters-->
         <div class="filter-block">
           <form action="/server" method="post">
-            <!--Производители_фильтры-->
+            <!--Producers_filters-->
             <h2>Производители:</h2>
-             <input type="checkbox" name="checkbox" id="check1" checked><label for="check1">Baxter Of California</label>
-             <input type="checkbox" name="checkbox" id="check2"><label for="check2">Mr Natty</label>
-             <input type="checkbox" name="checkbox" id="check3" checked><label for="check3">Suavecito</label>
-             <input type="checkbox" name="checkbox" id="check4"><label for="check4">Malin+Goetz</label>
-             <input type="checkbox" name="checkbox" id="check5"><label for="check5">Murray's</label>
-             <input type="checkbox" name="checkbox" id="check6" checked><label for="check6">American Crew</label>
-            <!--Группы товаров_фильтры-->
+             <input type="checkbox" name="checkbox" id="check1" checked>
+             <label for="check1">Baxter Of California</label>
+             <input type="checkbox" name="checkbox" id="check2">
+             <label for="check2">Mr Natty</label>
+             <input type="checkbox" name="checkbox" id="check3" checked>
+             <label for="check3">Suavecito</label>
+             <input type="checkbox" name="checkbox" id="check4">
+             <label for="check4">Malin+Goetz</label>
+             <input type="checkbox" name="checkbox" id="check5">
+             <label for="check5">Murray's</label>
+             <input type="checkbox" name="checkbox" id="check6" checked>
+             <label for="check6">American Crew</label>
+            <!--Products groups_filters-->
             <h2>Группы товаров:</h2>
              <input type="radio" name="radio" id="radio1" value="radio1" checked><label for="radio1">Бритвенные принадлежности</label>
-             <input type="radio" name="radio" id="radio2" value="radio2"><label for="radio2">Средства для ухода</label>
-             <input type="radio" name="radio" id="radio3" value="radio3"><label for="radio3">Аксессуары</label>
+             <input type="radio" name="radio" id="radio2" value="radio2">
+             <label for="radio2">Средства для ухода</label>
+             <input type="radio" name="radio" id="radio3" value="radio3">
+             <label for="radio3">Аксессуары</label>
              <input type="submit" name="submit" value="Показать">
            </form>
          </div>
-         <!--Галерея товаров-->
+         <!--Products gallery-->
         <div class="content-block">
-          <!--Превью товара-->
+          <!--Product's preview-->
           <div class="content-preview">
             <a href="http://barbershop-borodinski.ru/id36606/barbershop/catalog-item.html">
               <img src="img/img-catalog-1.jpg" width="220" height="165" alt="Набор для путешествий
@@ -145,7 +165,7 @@
             </div>
           </div>
         </div>
-         <!--Пейджинг-->
+         <!--Paging-->
         <ul class="page-nav">
           <li>
             <a href="#">1</a>
@@ -162,6 +182,7 @@
         </ul>
       </div>
     </div>
+    <!-- Footer -->
     <footer>
       <div class="container clearfix">
         <div class="footer-contacts">
@@ -182,5 +203,7 @@
         </div>
       </div>
     </footer>
+    <!-- Modal -->
+
   </body>
  </html>
