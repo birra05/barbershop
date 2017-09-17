@@ -5,10 +5,14 @@ body {
   color: #000;
   font-weight: bold;
   font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
+  background: #111 url("../img/bg-index.jpg") no-repeat center top;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
 }
 
 * {
-  box-sizing: border-box;
   text-transform: uppercase;
 }
 
@@ -37,6 +41,15 @@ a {
   text-decoration: none;
 }
 
+input {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .container {
   width: 940px;
   margin: 0 auto;
@@ -51,9 +64,10 @@ a {
 /*Header*/
 
 .main-header {
+  /*Exclude vertical overflow*/
+  min-height: 70px;
   background: #000;
   color: #fff;
-  text-transform: uppercase;
   font-size: 0;
 }
 
@@ -176,6 +190,210 @@ a {
   color: #aba9a7;
 }
 
+.logo {
+  width: 368px;
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 70px;
+}
+
+.logo img {
+  width: 368px;
+  height: 204px;
+}
+
+/*Features*/
+
+.features-row {
+  margin-bottom: 80px;
+  font-size: 0;
+}
+
+.features-item {
+  display: inline-block;
+  vertical-align: baseline;
+  width: 33%;
+  padding: 0 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.features-title {
+  position: relative;
+  margin-bottom: 70px;
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.features-title:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 55px;
+  left: 45%;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.features-item  p {
+  max-height: 70px;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+/*Index-content*/
+
+.index-content {
+  position: relative;
+  margin: 0 10px;
+  margin-bottom: 30px;
+  padding: 50px 80px;
+  font-size: 0;
+  background: url("../img/bg-container.png");
+}
+
+.index-content:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 8px;
+  height: 278px;
+  background: url("../img/icon-index-shadow.png") no-repeat;
+}
+
+.index-content:last-of-type {
+  margin-bottom: 60px;
+}
+
+.index-content p {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.index-content .btn:hover, .index-content .btn:active{
+  background: #663d15;
+}
+
+.content-column  {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.content-column.left {
+  float: left;
+  width: 350px;
+}
+
+.content-column.right {
+  float: right;
+  width: 300px;
+}
+
+.content-column-title {
+  margin-bottom: 35px;
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.content-column.right .content-column-title {
+  text-align: left;
+}
+
+/*News block*/
+
+.news-preview li {
+  margin-bottom: 25px;
+}
+
+.news-preview p {
+  max-height: 70px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.news-time {
+  font-weight: normal;
+  text-transform: lowercase;
+}
+
+.btn {
+  display: inline-block;
+  vertical-align: baseline;
+  width: 140px;
+  height: 44px;
+  border: 0;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  line-height: 44px;
+  text-transform: uppercase;
+}
+
+/*Gallery on the index page*/
+
+.gallery {
+  position: relative;
+  height: 260px;
+}
+
+.gallery-content {
+  height: 165px;
+  margin: 0;
+  border: 7px solid #fff;
+}
+
+.gallery .btn {
+  position: absolute;
+  bottom: 0;
+}
+
+.gallery-prev {
+  left: 0;
+}
+
+.gallery-next {
+  right: 0;
+}
+
+/*Contacts*/
+
+.main-contacts .btn {
+  margin-right: 20px;
+}
+
+.main-contacts .btn:last-child {
+  margin-right: 0;
+}
+
+/*Appointment */
+
+.appointment-form input {
+  float: left;
+  width: 140px;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  border: 2px #000 solid;
+}
+
+.appointment-form input:focus {
+  border-color: #663d15;
+}
+
+.appointment-form input:nth-child(2n) {
+  float: right;
+}
+
+.appointment-form .btn {
+  width: 100%;
+}
+
+
 /*Filters*/
 
 .filter-block {
@@ -195,21 +413,25 @@ a {
 
 .filter-block label {
   display: block;
-  width: 170px;
-  font-size: 14px;
-  line-height: 24px;
-  margin-bottom: 14px;
   cursor: pointer;
+}
+
+.filter-item {
+  margin-bottom: 18px;
+}
+
+.filter-item:last-of-type {
+  margin-bottom: 30px;
 }
 
 /*Producers_filters*/
 
-input[type="checkbox"] + label:before {
+input[type="checkbox"] + label:before, input[type="radio"] + label:before {
   content: "";
   display: inline-block;
   vertical-align: middle;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   margin-right: 22px;
   cursor: pointer;
   background: #f9f6f3;
@@ -219,11 +441,6 @@ input[type="checkbox"] + label:before {
 input[type="checkbox"]:checked + label:before {
   content: "";
   background: transparent url("../img/icons-sprite.png") no-repeat -148px -37px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 20px;
-  height: 20px;
 }
 
 /*Products group_filters*/
@@ -239,15 +456,6 @@ input[type="radio"] + label {
 }
 
 input[type="radio"] + label:before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  margin-right: 22px;
-  cursor: pointer;
-  background: #f9f6f3;
-  border: 2px solid #000;
   border-radius: 50%;
 }
 
@@ -256,9 +464,6 @@ input[type="radio"]:checked + label:after {
   position: absolute;
   top: 10px;
   left: 6px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   width: 8px;
   height: 8px;
   background: #000;
@@ -268,14 +473,14 @@ input[type="radio"]:checked + label:after {
 input[type="submit"] {
   display: inline-block;
   width: 112px;
-  margin-top: 42px;
+  /*margin-top: 42px;*/
   padding: 12px 0;
 
   font-size: 12px;
   line-height: 18px;
   color: #fff;
   background: #000;
-  border: none;
+  border: 0;
 }
 
 input[type="checkbox"]:hover + label, input[type="radio"]:hover + label {
@@ -305,8 +510,11 @@ input[type="submit"]:hover, input[type="submit"]:active,
   font-size: 14px;
   line-height: 18px;
   background: #fff;
-  -webkit-box-shadow: 0 0 15px 0 rgba (0, 1, 1, 0.2);
   box-shadow: 0 0 15px 0 rgba(0, 1, 1, 0.2);
+}
+
+.content-preview:hover {
+  box-shadow: 0 0 15px 0 rgba(0, 1, 1, 0.3);
 }
 
 .content-preview p:first-of-type {
@@ -331,6 +539,12 @@ input[type="submit"]:hover, input[type="submit"]:active,
   padding-right: 15px;
   padding-bottom: 16px;
   font-size: 0;
+}
+
+.content-preview img {
+  display: block;
+  width: 220px;
+  height: 165px;
 }
 
 .content-price {
@@ -381,7 +595,6 @@ input[type="submit"]:hover, input[type="submit"]:active,
   vertical-align: top;
   width: 140px;
   height: 149px;
-  box-sizing: border-box;
   margin-right: 20px;
 }
 
